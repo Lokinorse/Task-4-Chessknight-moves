@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Task4</title>
+</head>
+<body>
+    <style>
+        #chessBoardWrapper{
+            display: flex;
+        }
+        #column{
+            flex-direction: column-reverse;
+            display:flex;
+            
+        }
+        #app{
+            margin:2em;
+            display:flex;
+        }
+        .tile{
+            width:80px;
+            height:80px;
+            border:solid grey 2px;
+            display:flex;       
+            background-color:#f0d9b5;     
+           
+        }
+        .black{
+            background-color:#b58863;
+        }
+        .knight{
+            background-color: blue;
+        }
+        .knightCanMoveHere{
+            background-color:green;
+        }
+/*         .white{
+            background-color:#f0d9b5;
+        } */
+    </style>
+    <div id="app">
+        <div id='chessBoardWrapper'>
+            <div id='column'
+            v-for="(xRow, xValue) in board" >
+                <div class="tile" :class="[ tile.isBlack  ? 'black' : '',
+                tile.position.x===knight.x && tile.position.y === knight.y ? 'knight' : '',
+                knightMoves(tile.position) ? 'knightCanMoveHere': '']"
+                v-for='tile in xRow'
+                v-on:click="setMove(tile.position)">
+                {{tile.label}}
+                </div>   
+            </div>
+        </div>
+  
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
