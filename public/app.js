@@ -24,7 +24,7 @@ var app = new Vue({
   methods: {
     setMove:function(tilePosition){
       this.knight=tilePosition;
-      console.log(tilePosition)
+
 
     },
     knightMoves: function({x:possibleX, y:possibleY}){
@@ -32,15 +32,9 @@ var app = new Vue({
       const {x,y} = this.knight;
       const isPossibleX = possibleX-x;
       const isPossibleY = possibleY-y;
-      return (
-        isPossibleX === 2 && isPossibleY === 1 ||
-        isPossibleX === 1 && isPossibleY === 2 ||
-        isPossibleX === -2 && isPossibleY === -1 ||
-        isPossibleX === -1 && isPossibleY === -2 ||
-        isPossibleX === 2 && isPossibleY === -1 ||
-        isPossibleX === -2 && isPossibleY === 1||
-        isPossibleX === 1 && isPossibleY === -2 ||
-        isPossibleX === -1 && isPossibleY=== 2
+      return (  
+        Math.abs(isPossibleX) === 2 && Math.abs(isPossibleY) === 1 ||
+        Math.abs(isPossibleX) === 1 && Math.abs(isPossibleY) === 2 
         );
 
 
