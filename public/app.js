@@ -33,11 +33,11 @@ var app = new Vue({
       const isPossibleX = possibleX-x;
       const isPossibleY = possibleY-y;
       return (  
-        Math.abs(isPossibleX) === 2 && Math.abs(isPossibleY) === 1 ||
+        Math.abs(isPossibleX) === 2 && Math.abs(isPossibleY) === 1   ||
         Math.abs(isPossibleX) === 1 && Math.abs(isPossibleY) === 2 
         );
-
-
+        
+        /* test */
     }
   },
 
